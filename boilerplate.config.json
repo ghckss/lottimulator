@@ -1,0 +1,14 @@
+{
+  "projectName": "lottimulation",
+  "stack": "next-app",
+  "packageManager": "pnpm",
+  "styling": "tailwind",
+  "features": [
+    "error-loading-empty",
+    "eslint-setting",
+    "layout",
+    "routing",
+    "table-list-pattern",
+    "test-setup"
+  ]
+}
