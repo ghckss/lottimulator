@@ -1,5 +1,5 @@
 import { LottoBall } from "@/components/LottoBall";
-import history from "@/data/lotto-history.json";
+import { readLottoHistory } from "@/features/lotto/history";
 import {
   countDatePattern,
   countOverdue,
@@ -7,10 +7,9 @@ import {
   getTopFrequency,
   normalizeScores
 } from "@/features/lotto/statistics";
-import type { LottoDraw } from "@/features/lotto/types";
 
-export default function StatsPage() {
-  const draws = history as LottoDraw[];
+export default async function StatsPage() {
+  const draws = await readLottoHistory();
   const recentFrequency = [...countRecentFrequency(draws, 52).entries()]
     .sort((a, b) => b[1] - a[1] || a[0] - b[0])
     .slice(0, 10);

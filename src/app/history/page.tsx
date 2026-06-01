@@ -1,9 +1,8 @@
 import { HistoryTable } from "@/components/HistoryTable";
-import history from "@/data/lotto-history.json";
-import type { LottoDraw } from "@/features/lotto/types";
+import { readLottoHistory } from "@/features/lotto/history";
 
-export default function HistoryPage() {
-  const draws = history as LottoDraw[];
+export default async function HistoryPage() {
+  const draws = await readLottoHistory();
 
   return (
     <main className="mx-auto w-full max-w-6xl space-y-6 px-4 py-8 sm:px-6">

@@ -4,8 +4,7 @@ import type { LottoDraw } from "../src/features/lotto/types.ts";
 
 const API_URL = "https://www.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do";
 const REFERER_URL = "https://www.dhlottery.co.kr/lt645/result";
-const SOURCE_DATA_PATH = path.join(process.cwd(), "src/data/lotto-history.json");
-const PUBLIC_DATA_PATH = path.join(process.cwd(), "public/data/lotto-history.json");
+const DATA_PATH = path.join(process.cwd(), "public/data/lotto-history.json");
 const MAX_CONSECUTIVE_MISSES = 3;
 const REQUEST_DELAY_MS = 120;
 const BATCH_CURSOR_STEP = 10;
@@ -187,7 +186,7 @@ function getPageCursor(round: number): number {
 
 async function readExistingHistory(): Promise<LottoDraw[]> {
   try {
-    const content = await readFile(SOURCE_DATA_PATH, "utf8");
+    const content = await readFile(DATA_PATH, "utf8");
     const parsed: unknown = JSON.parse(content);
     return Array.isArray(parsed) ? parsed.filter(isLottoDraw) : [];
   } catch {
@@ -211,10 +210,8 @@ function isLottoDraw(value: unknown): value is LottoDraw {
 
 async function writeHistory(history: LottoDraw[]): Promise<void> {
   const content = `${JSON.stringify(history, null, 2)}\n`;
-  await mkdir(path.dirname(SOURCE_DATA_PATH), { recursive: true });
-  await mkdir(path.dirname(PUBLIC_DATA_PATH), { recursive: true });
-  await writeFile(SOURCE_DATA_PATH, content, "utf8");
-  await writeFile(PUBLIC_DATA_PATH, content, "utf8");
+  await mkdir(path.dirname(DATA_PATH), { recursive: true });
+  await writeFile(DATA_PATH, content, "utf8");
 }
 
 function delay(ms: number): Promise<void> {
