@@ -60,12 +60,14 @@ export async function fetchLatestRound(startRound = 1): Promise<number> {
   for (
     let cursorRound = getPageCursor(startRound);
     misses < MAX_CONSECUTIVE_MISSES;
-    cursorRound += BATCH_CURSOR_STEP
+    cursorRound += 1
   ) {
     const batch = await fetchRoundBatch(cursorRound);
     if (batch.length > 0) {
-      latestRound = Math.max(latestRound, ...batch.map((draw) => draw.round));
+      const batchLatestRound = Math.max(...batch.map((draw) => draw.round));
+      latestRound = Math.max(latestRound, batchLatestRound);
       misses = 0;
+      cursorRound = Math.max(cursorRound, batchLatestRound);
     } else {
       misses += 1;
     }
@@ -86,9 +88,9 @@ export async function fetchAllHistory(options: FetchAllHistoryOptions = {}): Pro
   let misses = 0;
 
   for (
-    let cursorRound = options.fullRefresh ? 1 : getPageCursor(Math.max(1, highestStoredRound));
+    let cursorRound = options.fullRefresh ? 1 : Math.max(1, highestStoredRound + 1);
     misses < MAX_CONSECUTIVE_MISSES;
-    cursorRound += BATCH_CURSOR_STEP
+    cursorRound += 1
   ) {
     const batch = await fetchRoundBatch(cursorRound);
     if (batch.length > 0) {
@@ -98,6 +100,7 @@ export async function fetchAllHistory(options: FetchAllHistoryOptions = {}): Pro
       misses = 0;
       const rounds = batch.map((draw) => draw.round);
       console.log(`Fetched cursor ${cursorRound}: rounds ${Math.min(...rounds)}-${Math.max(...rounds)}`);
+      cursorRound = Math.max(cursorRound, Math.max(...rounds));
     } else {
       misses += 1;
     }
