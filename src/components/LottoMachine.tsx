@@ -3,14 +3,21 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Play, RotateCcw, WandSparkles } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { drawRandomNumbers, recommendWeeklyNumbers } from "@/features/lotto/recommend";
-import type { LottoDraw, LottoNumberSet } from "@/features/lotto/types";
+import { DEFAULT_RECOMMENDATION_METHOD } from "@/features/lotto/dataRecommend";
+import { drawRandomNumbers } from "@/features/lotto/recommend";
+import type {
+  DataRecommendation,
+  LottoDraw,
+  LottoNumberSet,
+  RecommendationMethodKey
+} from "@/features/lotto/types";
 import { Button } from "@/shared/ui/Button";
 import { LottoBall } from "./LottoBall";
 import { RecommendationSummary } from "./RecommendationSummary";
 
 type LottoMachineProps = {
   draws: LottoDraw[];
+  dataRecommendation: DataRecommendation | null;
 };
 
 type DrawStatus = "idle" | "spinning" | "revealing" | "done";
@@ -31,16 +38,16 @@ const MACHINE_BALL_COUNT = 30;
 const MACHINE_BALL_RADIUS = 16;
 const MACHINE_EDGE_PADDING = 6;
 
-export function LottoMachine({ draws }: LottoMachineProps) {
+export function LottoMachine({ draws, dataRecommendation }: LottoMachineProps) {
   const [status, setStatus] = useState<DrawStatus>("idle");
   const [drawnNumbers, setDrawnNumbers] = useState<number[]>([]);
   const [machineSize, setMachineSize] = useState(0);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [physicsBalls, setPhysicsBalls] = useState<PhysicsBall[]>([]);
   const [drawResult, setDrawResult] = useState<LottoNumberSet>();
+  const [methodKey, setMethodKey] = useState<RecommendationMethodKey>(DEFAULT_RECOMMENDATION_METHOD);
   const machineRef = useRef<HTMLDivElement | null>(null);
   const isRunning = status === "spinning" || status === "revealing";
-  const weeklyRecommendation = useMemo(() => recommendWeeklyNumbers(draws), [draws]);
   const sortedNumbers = useMemo(
     () => (drawResult ? [...drawResult.sortedNumbers] : []),
     [drawResult]
@@ -241,14 +248,20 @@ export function LottoMachine({ draws }: LottoMachineProps) {
         </Button>
       </div>
 
-      <RecommendationSummary totalDraws={draws.length} latestDraw={draws[0]} recommendation={weeklyRecommendation} />
+      <RecommendationSummary
+        totalDraws={draws.length}
+        latestDraw={draws[0]}
+        dataRecommendation={dataRecommendation}
+        selectedMethod={methodKey}
+        onSelectMethod={setMethodKey}
+      />
 
       <div className="rounded-lg border border-[#d3e8e2] bg-[#effdf8] p-4 text-sm leading-6 text-[#246455]">
         <span className="inline-flex items-center gap-2 font-bold text-[#123f35]">
           <WandSparkles className="h-4 w-4" aria-hidden="true" />
           시뮬레이션 안내
         </span>
-        <p className="mt-2">로또 머신은 매번 무작위 6개를 뽑고, 금주의 추천 숫자는 기준 조합 1개와 곱셈 순환 변환 조합 4개로 구성합니다.</p>
+        <p className="mt-2">로또 머신은 매번 무작위 6개를 뽑고, 추천 숫자는 전체 회차 데이터를 분석한 세 가지 방법론(가중 점수·패턴 필터·공출현 연쇄)에서 파생합니다. 어느 방법도 실제 당첨 확률을 높이지는 않습니다.</p>
       </div>
     </div>
   );

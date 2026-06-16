@@ -1,10 +1,14 @@
 import assert from "node:assert/strict";
 import {
+  parseDataRecommendation,
+  selectMethod
+} from "../src/features/lotto/dataRecommend.ts";
+import {
   drawRandomNumbers,
   getRecommendationBasis,
   recommendWeeklyNumbers
 } from "../src/features/lotto/recommend.ts";
-import type { LottoDraw } from "../src/features/lotto/types.ts";
+import type { DataRecommendation, LottoDraw } from "../src/features/lotto/types.ts";
 
 const draws: LottoDraw[] = [
   { round: 3, date: "2026-05-09", numbers: [1, 2, 3, 4, 5, 6], bonus: 7 },
@@ -81,6 +85,54 @@ assert.deepEqual(getRecommendationBasis(draws), {
   drawDate: "2026-05-16",
   seed: "lottimulation:4:2026-05-16"
 });
+
+const recommendationPayload = {
+  basis: {
+    round: 1229,
+    drawDate: "2026-06-20",
+    sourceLatestRound: 1228,
+    totalDraws: 1228,
+    generatedAt: "2026-06-16"
+  },
+  methods: [
+    {
+      key: "weighted",
+      label: "가중 점수",
+      description: "desc",
+      condition: "cond",
+      scores: [{ number: 7, score: 0.83 }],
+      groups: [
+        { id: 1, label: "조합 1", drawOrder: [7, 3, 1, 22, 44, 15], sortedNumbers: [1, 3, 7, 15, 22, 44] }
+      ]
+    },
+    {
+      key: "markov",
+      label: "공출현 연쇄",
+      description: "desc",
+      condition: "cond",
+      scores: [],
+      groups: [
+        { id: 1, label: "조합 1", drawOrder: [6, 12, 19, 21, 28, 41], sortedNumbers: [6, 12, 19, 21, 28, 41] }
+      ]
+    }
+  ]
+};
+
+const parsed = parseDataRecommendation(recommendationPayload);
+assert.ok(parsed, "valid payload should parse");
+const parsedData: DataRecommendation = parsed;
+assert.equal(parsedData.methods.length, 2);
+assert.equal(selectMethod(parsedData, "weighted")?.groups[0]?.sortedNumbers.length, 6);
+assert.equal(selectMethod(parsedData, "markov")?.key, "markov");
+assert.equal(selectMethod(parsedData, "pattern"), undefined, "absent method returns undefined");
+
+assert.equal(parseDataRecommendation(null), null);
+assert.equal(parseDataRecommendation({ basis: {}, methods: [] }), null);
+assert.equal(
+  parseDataRecommendation({ basis: recommendationPayload.basis, methods: [{ key: "bogus" }] }),
+  null,
+  "unknown method keys are dropped and empty methods fail"
+);
 
 console.log("recommendation tests passed");
 

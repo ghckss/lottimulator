@@ -8,6 +8,7 @@
     "build": "NEXT_TEST_WASM_DIR=$PWD/node_modules/@next/swc-wasm-nodejs next build --webpack",
     "dev": "NEXT_TEST_WASM_DIR=$PWD/node_modules/@next/swc-wasm-nodejs next dev --webpack",
     "fetch:lotto": "node --experimental-strip-types scripts/fetch-lotto-history.ts",
+    "analyze:lotto": "python3 scripts/analyze-lotto.py",
     "harness": "node scripts/harness/check-conventions.mjs",
     "lint": "eslint .",
     "start": "next start",
