@@ -408,6 +408,45 @@ def _weighted_pick(weights: dict[int, float], exclude: set[int], rng: random.Ran
 
 
 # --------------------------------------------------------------------------- #
+# Method D: consensus of the base methods (majority vote + score tie-break)
+# --------------------------------------------------------------------------- #
+
+def build_consensus(base_methods: list[dict]) -> dict:
+    """Combine the base methods: pick the numbers they pick most often,
+    breaking ties by the highest average per-number score across methods."""
+    counts = {n: 0 for n in ALL_NUMBERS}
+    for method in base_methods:
+        for group in method["groups"]:
+            for number in group["sortedNumbers"]:
+                counts[number] += 1
+
+    score_lookup = {
+        method["key"]: {entry["number"]: entry["score"] for entry in method["scores"]}
+        for method in base_methods
+    }
+    avg_score = {
+        n: (
+            sum(score_lookup[key].get(n, 0.0) for key in score_lookup) / len(score_lookup)
+            if score_lookup
+            else 0.0
+        )
+        for n in ALL_NUMBERS
+    }
+
+    ranked = sorted(ALL_NUMBERS, key=lambda n: (-counts[n], -avg_score[n], n))
+    chosen = ranked[:PICK_COUNT]
+
+    return {
+        "key": "consensus",
+        "label": "방법 합의",
+        "description": "세 방법론이 만든 조합 전체에서 가장 많이 뽑힌 번호를 모으고, 동점일 때는 방법론 평균 점수가 높은 번호를 택합니다.",
+        "condition": "다수결(등장 횟수) · 동점 시 세 방법 평균 점수",
+        "scores": scores_payload(normalize(avg_score)),
+        "groups": [make_combo(1, "합의 조합", chosen)],
+    }
+
+
+# --------------------------------------------------------------------------- #
 # Method registry + orchestration
 # --------------------------------------------------------------------------- #
 
@@ -446,6 +485,7 @@ def build_recommendations(draws: list[Draw], generated_at: dt.date) -> dict:
     for key, builder in METHODS.items():
         rng = seeded_random(f"lottimulation:{basis['round']}:{basis['drawDate']}:{key}")
         methods.append(builder(draws, target, rng))
+    methods.append(build_consensus(methods))
     return {"basis": basis, "methods": methods}
 
 

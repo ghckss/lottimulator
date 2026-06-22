@@ -31,7 +31,7 @@ export type WeeklyRecommendation = {
   groups: WeeklyRecommendationGroup[];
 };
 
-export type RecommendationMethodKey = "weighted" | "pattern" | "markov";
+export type RecommendationMethodKey = "weighted" | "pattern" | "markov" | "consensus";
 
 export type DataRecommendationBasis = {
   round: number;

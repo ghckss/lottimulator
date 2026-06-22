@@ -29,6 +29,11 @@ const METHOD_OPTIONS: MethodOption[] = [
     key: "markov",
     name: "공출현 연쇄",
     hint: "함께 자주 당첨된 번호 쌍(공출현)을 따라 친화도가 높은 번호를 연쇄로 골라냅니다."
+  },
+  {
+    key: "consensus",
+    name: "방법 합의",
+    hint: "세 방법론이 가장 많이 뽑은 번호를 모으고, 동점일 때는 평균 점수가 높은 번호를 택합니다."
   }
 ];
 

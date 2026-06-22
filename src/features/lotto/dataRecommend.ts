@@ -10,7 +10,8 @@ import type {
 export const RECOMMENDATION_METHOD_KEYS: readonly RecommendationMethodKey[] = [
   "weighted",
   "pattern",
-  "markov"
+  "markov",
+  "consensus"
 ];
 
 export const DEFAULT_RECOMMENDATION_METHOD: RecommendationMethodKey = "weighted";
