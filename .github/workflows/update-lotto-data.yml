@@ -1,0 +1,62 @@
+name: Update lotto data
+
+on:
+  schedule:
+    # GitHub Actions cron uses UTC. 00:00 UTC is 09:00 in Korea.
+    - cron: "0 0 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-lotto-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Fetch latest draw history
+        run: pnpm fetch:lotto
+
+      - name: Regenerate recommendations
+        run: pnpm analyze:lotto
+
+      - name: Verify generated data and application
+        run: |
+          pnpm test
+          pnpm harness
+          pnpm lint
+          pnpm typecheck
+          pnpm build
+
+      - name: Commit updated data
+        run: |
+          if git diff --quiet -- public/data/lotto-history.json public/data/lotto-recommendations.json; then
+            echo "No data changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/lotto-history.json public/data/lotto-recommendations.json
+          git commit -m "chore: update lotto data"
+          git push
