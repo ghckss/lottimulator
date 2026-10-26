@@ -1,10 +1,10 @@
 {
   "basis": {
-    "round": 1247,
-    "drawDate": "2026-10-24",
-    "sourceLatestRound": 1246,
-    "totalDraws": 1246,
-    "generatedAt": "2026-10-19"
+    "round": 1248,
+    "drawDate": "2026-10-31",
+    "sourceLatestRound": 1247,
+    "totalDraws": 1247,
+    "generatedAt": "2026-10-26"
   },
   "methods": [
     {
@@ -15,51 +15,51 @@
       "scores": [
         {
           "number": 1,
-          "score": 0.7572
+          "score": 0.7557
         },
         {
           "number": 2,
-          "score": 0.7194
+          "score": 0.6981
         },
         {
           "number": 3,
-          "score": 0.9334
+          "score": 0.9153
         },
         {
           "number": 4,
-          "score": 0.7256
+          "score": 0.7374
         },
         {
           "number": 5,
-          "score": 0.604
+          "score": 0.6187
         },
         {
           "number": 6,
-          "score": 0.8543
+          "score": 0.8615
         },
         {
           "number": 7,
-          "score": 0.8067
+          "score": 0.7975
         },
         {
           "number": 8,
-          "score": 0.8199
+          "score": 0.7043
         },
         {
           "number": 9,
-          "score": 0.7335
+          "score": 0.6953
         },
         {
           "number": 10,
-          "score": 0.7169
+          "score": 0.6991
         },
         {
           "number": 11,
-          "score": 0.7671
+          "score": 0.7978
         },
         {
           "number": 12,
-          "score": 0.8431
+          "score": 0.8408
         },
         {
           "number": 13,
@@ -67,131 +67,131 @@
         },
         {
           "number": 14,
-          "score": 0.7818
+          "score": 0.6908
         },
         {
           "number": 15,
-          "score": 0.9089
+          "score": 0.8975
         },
         {
           "number": 16,
-          "score": 0.902
+          "score": 0.8795
         },
         {
           "number": 17,
-          "score": 0.8369
+          "score": 0.8625
         },
         {
           "number": 18,
-          "score": 0.8805
+          "score": 0.8443
         },
         {
           "number": 19,
-          "score": 0.8471
+          "score": 0.8266
         },
         {
           "number": 20,
-          "score": 0.785
+          "score": 0.7881
         },
         {
           "number": 21,
-          "score": 0.7679
+          "score": 0.7167
         },
         {
           "number": 22,
-          "score": 0.7101
+          "score": 0.7598
         },
         {
           "number": 23,
-          "score": 0.7141
+          "score": 0.6861
         },
         {
           "number": 24,
-          "score": 0.8698
+          "score": 0.8331
         },
         {
           "number": 25,
-          "score": 0.6946
+          "score": 0.674
         },
         {
           "number": 26,
-          "score": 0.7243
+          "score": 0.7329
         },
         {
           "number": 27,
-          "score": 0.8463
+          "score": 0.8257
         },
         {
           "number": 28,
-          "score": 0.8774
+          "score": 0.8491
         },
         {
           "number": 29,
-          "score": 0.7638
+          "score": 0.7718
         },
         {
           "number": 30,
-          "score": 0.8965
+          "score": 0.8792
         },
         {
           "number": 31,
-          "score": 0.879
+          "score": 0.8596
         },
         {
           "number": 32,
-          "score": 0.7121
+          "score": 0.7258
         },
         {
           "number": 33,
-          "score": 0.8058
+          "score": 0.8127
         },
         {
           "number": 34,
-          "score": 0.8025
+          "score": 0.7822
         },
         {
           "number": 35,
-          "score": 0.8232
+          "score": 0.8178
         },
         {
           "number": 36,
-          "score": 0.7815
+          "score": 0.7979
         },
         {
           "number": 37,
-          "score": 0.8304
+          "score": 0.8204
         },
         {
           "number": 38,
-          "score": 0.9431
+          "score": 0.9173
         },
         {
           "number": 39,
-          "score": 0.7724
+          "score": 0.7772
         },
         {
           "number": 40,
-          "score": 0.7752
+          "score": 0.7634
         },
         {
           "number": 41,
-          "score": 0.7108
+          "score": 0.6853
         },
         {
           "number": 42,
-          "score": 0.7617
+          "score": 0.7755
         },
         {
           "number": 43,
-          "score": 0.7306
+          "score": 0.7098
         },
         {
           "number": 44,
-          "score": 0.7973
+          "score": 0.7726
         },
         {
           "number": 45,
-          "score": 0.913
+          "score": 0.7399
         }
       ],
       "groups": [
@@ -199,100 +199,100 @@
           "id": 1,
           "label": "조합 1",
           "drawOrder": [
-            23,
-            22,
-            35,
-            34,
+            6,
+            36,
+            15,
             2,
-            43
+            30,
+            35
           ],
           "sortedNumbers": [
             2,
-            22,
-            23,
-            34,
+            6,
+            15,
+            30,
             35,
-            43
+            36
           ]
         },
         {
           "id": 2,
           "label": "조합 2",
           "drawOrder": [
-            39,
-            1,
-            6,
-            30,
-            35,
-            28
+            27,
+            29,
+            28,
+            11,
+            23,
+            5
           ],
           "sortedNumbers": [
-            1,
-            6,
+            5,
+            11,
+            23,
+            27,
             28,
-            30,
-            35,
-            39
+            29
           ]
         },
         {
           "id": 3,
           "label": "조합 3",
           "drawOrder": [
+            31,
+            37,
+            14,
+            44,
             42,
-            45,
-            34,
-            16,
-            10,
-            36
+            39
           ],
           "sortedNumbers": [
-            10,
-            16,
-            34,
-            36,
+            14,
+            31,
+            37,
+            39,
             42,
-            45
+            44
           ]
         },
         {
           "id": 4,
           "label": "조합 4",
           "drawOrder": [
-            21,
-            36,
-            40,
-            17,
-            26,
-            38
+            8,
+            35,
+            11,
+            14,
+            2,
+            18
           ],
           "sortedNumbers": [
-            17,
-            21,
-            26,
-            36,
-            38,
-            40
+            2,
+            8,
+            11,
+            14,
+            18,
+            35
           ]
         },
         {
           "id": 5,
           "label": "조합 5",
           "drawOrder": [
-            37,
-            32,
-            19,
-            33,
-            34,
-            8
+            2,
+            15,
+            14,
+            6,
+            41,
+            21
           ],
           "sortedNumbers": [
-            8,
-            19,
-            32,
-            33,
-            34,
-            37
+            2,
+            6,
+            14,
+            15,
+            21,
+            41
           ]
         }
       ]
@@ -333,7 +333,7 @@
         },
         {
           "number": 8,
-          "score": 0.6663
+          "score": 0.6926
         },
         {
           "number": 9,
@@ -357,7 +357,7 @@
         },
         {
           "number": 14,
-          "score": 0.7118
+          "score": 0.7382
         },
         {
           "number": 15,
@@ -385,11 +385,11 @@
         },
         {
           "number": 21,
-          "score": 0.7848
+          "score": 0.8112
         },
         {
           "number": 22,
-          "score": 0.7472
+          "score": 0.7736
         },
         {
           "number": 23,
@@ -469,7 +469,7 @@
         },
         {
           "number": 42,
-          "score": 0.7471
+          "score": 0.7735
         },
         {
           "number": 43,
@@ -481,7 +481,7 @@
         },
         {
           "number": 45,
-          "score": 0.7914
+          "score": 0.8178
         }
       ],
       "groups": [
@@ -489,100 +489,100 @@
           "id": 1,
           "label": "조합 1",
           "drawOrder": [
-            27,
-            13,
-            16,
-            38,
-            23,
-            12
+            24,
+            25,
+            6,
+            37,
+            22,
+            41
           ],
           "sortedNumbers": [
-            12,
-            13,
-            16,
-            23,
-            27,
-            38
+            6,
+            22,
+            24,
+            25,
+            37,
+            41
           ]
         },
         {
           "id": 2,
           "label": "조합 2",
           "drawOrder": [
-            22,
-            39,
-            25,
-            34,
-            17,
-            28
+            40,
+            23,
+            18,
+            28,
+            5,
+            33
           ],
           "sortedNumbers": [
-            17,
-            22,
-            25,
+            5,
+            18,
+            23,
             28,
-            34,
-            39
+            33,
+            40
           ]
         },
         {
           "id": 3,
           "label": "조합 3",
           "drawOrder": [
-            30,
-            11,
-            38,
             21,
-            10,
-            28
+            8,
+            12,
+            29,
+            44,
+            18
           ],
           "sortedNumbers": [
-            10,
-            11,
+            8,
+            12,
+            18,
             21,
-            28,
-            30,
-            38
+            29,
+            44
           ]
         },
         {
           "id": 4,
           "label": "조합 4",
           "drawOrder": [
-            21,
-            33,
-            2,
-            24,
-            31,
-            3
+            39,
+            30,
+            23,
+            40,
+            16,
+            19
           ],
           "sortedNumbers": [
-            2,
-            3,
-            21,
-            24,
-            31,
-            33
+            16,
+            19,
+            23,
+            30,
+            39,
+            40
           ]
         },
         {
           "id": 5,
           "label": "조합 5",
           "drawOrder": [
-            12,
-            2,
-            34,
-            18,
-            11,
-            45
+            17,
+            22,
+            33,
+            38,
+            4,
+            15
           ],
           "sortedNumbers": [
-            2,
-            11,
-            12,
-            18,
-            34,
-            45
+            4,
+            15,
+            17,
+            22,
+            33,
+            38
           ]
         }
       ]
@@ -623,7 +623,7 @@
         },
         {
           "number": 8,
-          "score": 0.8449
+          "score": 0.8503
         },
         {
           "number": 9,
@@ -647,7 +647,7 @@
         },
         {
           "number": 14,
-          "score": 0.9198
+          "score": 0.9251
         },
         {
           "number": 15,
@@ -675,11 +675,11 @@
         },
         {
           "number": 21,
-          "score": 0.893
+          "score": 0.8984
         },
         {
           "number": 22,
-          "score": 0.7861
+          "score": 0.7914
         },
         {
           "number": 23,
@@ -759,7 +759,7 @@
         },
         {
           "number": 42,
-          "score": 0.8503
+          "score": 0.8556
         },
         {
           "number": 43,
@@ -771,7 +771,7 @@
         },
         {
           "number": 45,
-          "score": 0.9358
+          "score": 0.9412
         }
       ],
       "groups": [
@@ -779,100 +779,100 @@
           "id": 1,
           "label": "조합 1",
           "drawOrder": [
-            15,
-            9,
-            14,
-            34,
-            5,
-            19
+            29,
+            40,
+            25,
+            16,
+            23,
+            28
           ],
           "sortedNumbers": [
-            5,
-            9,
-            14,
-            15,
-            19,
-            34
+            16,
+            23,
+            25,
+            28,
+            29,
+            40
           ]
         },
         {
           "id": 2,
           "label": "조합 2",
           "drawOrder": [
-            33,
-            7,
-            10,
-            13,
-            21,
-            36
+            34,
+            4,
+            44,
+            30,
+            40,
+            10
           ],
           "sortedNumbers": [
-            7,
+            4,
             10,
-            13,
-            21,
-            33,
-            36
+            30,
+            34,
+            40,
+            44
           ]
         },
         {
           "id": 3,
           "label": "조합 3",
           "drawOrder": [
-            19,
-            29,
-            43,
-            39,
-            9,
-            38
+            41,
+            27,
+            37,
+            28,
+            14,
+            15
           ],
           "sortedNumbers": [
-            9,
-            19,
-            29,
-            38,
-            39,
-            43
+            14,
+            15,
+            27,
+            28,
+            37,
+            41
           ]
         },
         {
           "id": 4,
           "label": "조합 4",
           "drawOrder": [
+            38,
             13,
-            3,
-            20,
             12,
-            43,
-            18
+            26,
+            2,
+            44
           ],
           "sortedNumbers": [
-            3,
+            2,
             12,
             13,
-            18,
-            20,
-            43
+            26,
+            38,
+            44
           ]
         },
         {
           "id": 5,
           "label": "조합 5",
           "drawOrder": [
-            1,
-            11,
-            41,
+            16,
+            22,
             19,
-            35,
-            4
+            25,
+            2,
+            23
           ],
           "sortedNumbers": [
-            1,
-            4,
-            11,
+            2,
+            16,
             19,
-            35,
-            41
+            22,
+            23,
+            25
           ]
         }
       ]
@@ -885,51 +885,51 @@
       "scores": [
         {
           "number": 1,
-          "score": 0.813
+          "score": 0.8125
         },
         {
           "number": 2,
-          "score": 0.7451
+          "score": 0.738
         },
         {
           "number": 3,
-          "score": 0.9137
+          "score": 0.9076
         },
         {
           "number": 4,
-          "score": 0.7765
+          "score": 0.7804
         },
         {
           "number": 5,
-          "score": 0.6721
+          "score": 0.677
         },
         {
           "number": 6,
-          "score": 0.8762
+          "score": 0.8786
         },
         {
           "number": 7,
-          "score": 0.8679
+          "score": 0.8648
         },
         {
           "number": 8,
-          "score": 0.7812
+          "score": 0.7531
         },
         {
           "number": 9,
-          "score": 0.7385
+          "score": 0.7257
         },
         {
           "number": 10,
-          "score": 0.7619
+          "score": 0.756
         },
         {
           "number": 11,
-          "score": 0.8166
+          "score": 0.8269
         },
         {
           "number": 12,
-          "score": 0.8965
+          "score": 0.8958
         },
         {
           "number": 13,
@@ -937,131 +937,131 @@
         },
         {
           "number": 14,
-          "score": 0.8088
+          "score": 0.7889
         },
         {
           "number": 15,
-          "score": 0.8956
+          "score": 0.8918
         },
         {
           "number": 16,
-          "score": 0.9268
+          "score": 0.9193
         },
         {
           "number": 17,
-          "score": 0.8216
+          "score": 0.8302
         },
         {
           "number": 18,
-          "score": 0.9032
+          "score": 0.8911
         },
         {
           "number": 19,
-          "score": 0.874
+          "score": 0.8671
         },
         {
           "number": 20,
-          "score": 0.8205
+          "score": 0.8216
         },
         {
           "number": 21,
-          "score": 0.8196
+          "score": 0.8131
         },
         {
           "number": 22,
-          "score": 0.7518
+          "score": 0.7791
         },
         {
           "number": 23,
-          "score": 0.7505
+          "score": 0.7411
         },
         {
           "number": 24,
-          "score": 0.8825
+          "score": 0.8702
         },
         {
           "number": 25,
-          "score": 0.7304
+          "score": 0.7235
         },
         {
           "number": 26,
-          "score": 0.793
+          "score": 0.7959
         },
         {
           "number": 27,
-          "score": 0.9041
+          "score": 0.8972
         },
         {
           "number": 28,
-          "score": 0.8759
+          "score": 0.8664
         },
         {
           "number": 29,
-          "score": 0.7883
+          "score": 0.791
         },
         {
           "number": 30,
-          "score": 0.8568
+          "score": 0.851
         },
         {
           "number": 31,
-          "score": 0.8921
+          "score": 0.8856
         },
         {
           "number": 32,
-          "score": 0.7485
+          "score": 0.7531
         },
         {
           "number": 33,
-          "score": 0.8636
+          "score": 0.8659
         },
         {
           "number": 34,
-          "score": 0.8759
+          "score": 0.8691
         },
         {
           "number": 35,
-          "score": 0.8412
+          "score": 0.8394
         },
         {
           "number": 36,
-          "score": 0.8111
+          "score": 0.8166
         },
         {
           "number": 37,
-          "score": 0.8617
+          "score": 0.8583
         },
         {
           "number": 38,
-          "score": 0.9561
+          "score": 0.9474
         },
         {
           "number": 39,
-          "score": 0.8018
+          "score": 0.8035
         },
         {
           "number": 40,
-          "score": 0.8183
+          "score": 0.8143
         },
         {
           "number": 41,
-          "score": 0.7437
+          "score": 0.7351
         },
         {
           "number": 42,
-          "score": 0.7906
+          "score": 0.8058
         },
         {
           "number": 43,
-          "score": 0.7674
+          "score": 0.7604
         },
         {
           "number": 44,
-          "score": 0.8314
+          "score": 0.8232
         },
         {
           "number": 45,
-          "score": 0.8848
+          "score": 0.8374
         }
       ],
       "groups": [
@@ -1069,20 +1069,20 @@
           "id": 1,
           "label": "합의 조합",
           "drawOrder": [
-            34,
-            38,
-            19,
-            21,
-            13,
-            12
+            23,
+            2,
+            15,
+            28,
+            44,
+            40
           ],
           "sortedNumbers": [
-            12,
-            13,
-            19,
-            21,
-            34,
-            38
+            2,
+            15,
+            23,
+            28,
+            40,
+            44
           ]
         }
       ]
